@@ -1,0 +1,36 @@
+import axios from "axios";
+
+const BASE_URL = "http://localhost:8080/appUsers";
+
+export class AppUserService {
+  constructor() {
+    // Initialize any necessary properties here
+    this.baseUrl = "http://localhost:8080/appUsers";
+  }
+
+  // Define methods for interacting with appUsers here
+  async getAllAppUsers() {
+    const response = await axios.get(BASE_URL);
+    return response.data;
+  }
+
+  async getAppUserById(id) {
+    const response = await axios.get(`${BASE_URL}/${id}`);
+    return response.data;
+  }
+
+  async createAppUser(appUserData) {
+    const response = await axios.post(BASE_URL, appUserData);
+    return response.data;
+  }
+
+  async updateAppUser(id, appUserData) {
+    const response = await axios.put(`${BASE_URL}/${id}`, appUserData);
+    return response.data;
+  }
+
+  async deleteAppUser(id) {
+    const response = await axios.delete(`${BASE_URL}/${id}`);
+    return response.data;
+  }
+}
