@@ -78,6 +78,10 @@ export const Login = () => {
               <button className="btn btn-primary" type="submit">
                 Iniciar Sesión
               </button>
+              <button onClick={() => navigate("/register")}>
+                {" "}
+                Registrarse{" "}
+              </button>
             </form>
           </div>
         </div>
